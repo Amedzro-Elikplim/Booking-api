@@ -33,7 +33,7 @@ const Login = async (req, res) => {
 
     const isUserAvailable = await User.findOne({ email });
     if (isUserAvailable) {
-      res.status(200).send("Login successful");
+      res.status(201).send("Login successful");
       return;
     }
     return res.status(404).send({ errored: "error" , message: "User not found" });
