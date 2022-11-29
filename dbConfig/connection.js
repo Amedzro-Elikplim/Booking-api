@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const config = require("config");
 
 mongoose
-  .connect(config.get("dbConfig.connect"), {
+  .connect(config.get("db"), {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

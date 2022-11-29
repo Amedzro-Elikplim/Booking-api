@@ -1,8 +1,5 @@
-{
-  "dbConfig": {
-    "connect": "mongodb://localhost:27017/tableBooking"
-  },
-  "jwtPrivateKey": {
-    "secret": ""
+
+  {
+    "db": "mongodb://localhost:27017/tableBooking"
   }
-}
+
