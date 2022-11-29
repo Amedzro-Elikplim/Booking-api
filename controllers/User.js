@@ -38,7 +38,6 @@ const Login = async (req, res) => {
     }
     return res.status(404).send({ errored: "error" , message: "User not found" });
 
-
   } catch (error) {
     return res.status(404).send(error);
   }
