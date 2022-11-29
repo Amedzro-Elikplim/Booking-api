@@ -5,7 +5,7 @@ const Table = require("../models/Table");
 
 const AllUsers = async (req, res) => {
     try {
-        const users = await User.find();
+        const users = await User.find().select("-_id -__v");
 
         return res.status(200).send(users);
     } catch (error) {
@@ -15,7 +15,7 @@ const AllUsers = async (req, res) => {
 
 const Restaurants = async (req, res) => {
     try {
-        const restaurant = await Restaurant.find();
+        const restaurant = await Restaurant.find().select("-_id -__v");
         return res.status(200).send(restaurant);
     } catch (error) {
         return res.status(404).send(error);
@@ -24,7 +24,7 @@ const Restaurants = async (req, res) => {
 
 const Menus = async (req, res) => {
     try {
-        const menus = await Menu.find();
+        const menus = await Menu.find().select("-_id -__v");
         return res.status(200).send(menus);
     } catch (error) {
         return res.status(404).send(error);
@@ -33,7 +33,7 @@ const Menus = async (req, res) => {
 
 const Tables = async (req, res) => {
     try {
-        const tables = await Table.find();
+        const tables = await Table.find().select("-_id -__v");
         return res.status(200).send(tables);
     } catch (error) {
         return res.status(404).send(error);

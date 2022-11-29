@@ -13,11 +13,11 @@ const restaurantSchema = new Schema(
       required: [true, "provide restaurant name"],
     },
     Hours: {
-      type: Date,
+      type: String,
       required: [true, "provide time"],
     },
     Phone: {
-      type: Number,
+      type: String,
       required: [true, "provide phone number"],
     },
     Location: {
