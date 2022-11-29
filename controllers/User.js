@@ -34,7 +34,7 @@ const Login = async (req, res) => {
     const isUserAvailable = await User.findOne({ email });
     if (isUserAvailable) return res.status(200).send("Login successful");
     
-    return res.status(404).send({ message: "User not found" });
+    return res.status(404).send({ errored: "error" , message: "User not found" });
 
 
   } catch (error) {
