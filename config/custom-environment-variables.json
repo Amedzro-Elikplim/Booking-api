@@ -1,6 +1,6 @@
 {
   "dbConfig": {
-    "connect": "mongodb://localhost:27017/tableBooking"
+    "connect": "MONGODB_URL"
   },
   "jwtPrivateKey": {
     "secret": ""
