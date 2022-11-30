@@ -49,14 +49,26 @@ const Login = async (req, res) => {
 
 const saveBooking = async (req, res) => {
   try {
-    const booking = await Book.create(req.body);
+    const { firstname, lastname, email, time, date, restaurant, table, phone } = req.body;
+     
+    const booking = await Book.create({
+      firstname,
+      lastname,
+      email,
+      time,
+      date,
+      restaurant,
+      table, 
+      phone
+    });
+
     if (booking) {
       return res.status(201).send(booking);
     }
 
     return res.status(401).send({message: "Not created"})
   } catch (error) {
-    return res.status(404).send()
+    return res.status(404).send(error)
   }
 }
 
