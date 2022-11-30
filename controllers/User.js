@@ -1,7 +1,9 @@
 const User = require("../models/User");
+const Booking = require("../models/Book");
 // const isEmpty = require("lodash/isEmpty");
 const _ = require("lodash");
 const { validateRegistrationInputs } = require("../validators/validators");
+const Book = require("../models/Book");
 const Register = async (req, res) => {
   try {
     console.log("runing");
@@ -45,10 +47,25 @@ const Login = async (req, res) => {
 };
 
 
+const saveBooking = async (req, res) => {
+  try {
+    const booking = await Book.create(req.body);
+    if (booking) {
+      return res.status(201).send(booking);
+    }
+
+    return res.status(401).send({message: "Not created"})
+  } catch (error) {
+    return res.status(404).send()
+  }
+}
+
+
 
 
 
 module.exports= {
   Register,
-  Login
+  Login,
+  saveBooking
 }
